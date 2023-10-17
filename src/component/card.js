@@ -4,7 +4,9 @@ import {
   faChevronDown,
   faChevronUp,
   faTrashCan,
-  faPen
+  faPen,
+  faCircleCheck,
+  faCircleXmark,
 } from "@fortawesome/free-solid-svg-icons";
 // import Box from "@mui/material/Box";
 // import Button from "@mui/material/Button";
@@ -32,6 +34,7 @@ const Card = ({ list, setList }) => {
       }
       return i;
     });
+    setEditable(editable);
     setList(updateList);
   };
 
@@ -53,7 +56,7 @@ const Card = ({ list, setList }) => {
       />
       <FontAwesomeIcon
         onClick={() => CardEdit({ id: item.id, editable: item.editable })}
-        color={"green"}
+        color={"#3697fe"}
         size={"1x"}
         icon={faPen}
         className="icon"
@@ -61,17 +64,41 @@ const Card = ({ list, setList }) => {
     </>
   );
 
-  const handleChange = (event, propertyName, id) => {
-    console.log(event);
+  const SaveOrNotComponent = ({ item }) => (
+    <>
+      <FontAwesomeIcon
+        color={"lightgreen"}
+        size={"1x"}
+        icon={faCircleXmark}
+        className="icon"
+        onClick={() => {
+        CardEdit({ id: item.id, editable: item.editable })
+        }}
+      />
+      <FontAwesomeIcon
+        onClick={() =>  {
+          
+          CardEdit({ id: item.id, editable: item.editable })
+        }}
+        color={"#3697fe"}
+        size={"1x"}
+        icon={faCircleCheck}
+        className="icon"
+      />
+    </>
+  );
 
-    // const updateList = list.map((i) => {
-    //   if (i.id === id) {
-    //     i[propertyName] = event.target.value;
-    //     return i;
-    //   }
-    //   return i;
-    // });
-    // setList(updateList);
+  const handleChange = (event, propertyName, id) => {
+    console.log(event.target.value, propertyName, id);
+
+    const updateList = list.map((i) => {
+      if (i.id === id) {
+        i[propertyName] = event.target.value;
+        return i;
+      }
+      return i;
+    });
+    setList(updateList);
   };
 
   const Modal = () => (
@@ -126,6 +153,7 @@ const Card = ({ list, setList }) => {
                   <div className="metadata-item">
                     <div className="title">Gender</div>{" "}
                     <input
+                      onChange={(i) => handleChange(i, "gender", item.id)}
                       className={"gender " + (item.editable && "editmode")}
                       value={item.gender}
                     />
@@ -133,6 +161,7 @@ const Card = ({ list, setList }) => {
                   <div className="metadata-item">
                     <div className="title">Country</div>{" "}
                     <input
+                      onChange={(i) => handleChange(i, "country", item.id)}
                       className={"country " + (item.editable && "editmode")}
                       value={item.country}
                     />
@@ -141,14 +170,13 @@ const Card = ({ list, setList }) => {
                 <div className="metadata-item">
                   <div className="title">Description</div>{" "}
                   <textarea
+                    onChange={(i) => handleChange(i, "description", item.id)}
                     className={"desc " + (item.editable && "editmode")}
                     value={item.description}
                   />
                 </div>
                 <div className="icon-container">
-                  {/* {editable ? <editableComponent/> : } */}
-                  <EditableComponent item={item} />
-                  <EditableComponent item={item} />
+                  {editable ? <EditableComponent item={item} /> : <SaveOrNotComponent item={item} />}
                 </div>
               </div>
             )}
