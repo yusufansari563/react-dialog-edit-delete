@@ -89,8 +89,6 @@ const Card = ({ list, setList }) => {
   );
 
   const handleChange = (event, propertyName, id) => {
-    console.log(event.target.value, propertyName, id);
-
     const updateList = list.map((i) => {
       if (i.id === id) {
         i[propertyName] = event.target.value;
