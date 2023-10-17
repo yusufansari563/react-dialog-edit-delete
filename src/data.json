@@ -1,0 +1,24 @@
+{
+  "list": [
+    {
+      "id": 1,
+      "age": "22 years",
+      "name": "john doe",
+      "gender": "male",
+      "country": "India",
+      "description": "Lorem ipsum dolor, sit quae illo quidem omnis, quisquam assumenda voluptate itaque ipsam ratione? Praesentium voluptatibus molestias at qui? Eos doloremque omnis porro corporis ullam. Libero sapiente cum quibusdam, excepturi aperiam odit architecto iusto eaque explicabo illum id, ad debitis natus facilis reiciendis mollitia soluta omnis repellat. Sint impedit eveniet ipsam exercitationem deserunt accusantium doloribus!",
+      "open": false,
+      "editable": false
+    },
+    {
+      "id": 2,
+      "age": "32 years",
+      "name": "john doe",
+      "gender": "male",
+      "country": "India",
+      "description": "Lorem ipsum dolor, sit quae illo quidem omnis, quisquam assumenda voluptate itaque ipsam ratione? Praesentium voluptatibus molestias at qui? Eos doloremque omnis porro corporis ullam. Libero sapiente cum quibusdam, excepturi aperiam odit architecto iusto eaque explicabo illum id, ad debitis natus facilis reiciendis mollitia soluta omnis repellat. Sint impedit eveniet ipsam exercitationem deserunt accusantium doloribus!",
+      "open": false,
+      "editable": false
+    }
+  ]
+}

@@ -1,0 +1,115 @@
+.App {
+  font-family: sans-serif;
+  text-align: center;
+}
+
+body {
+  background-color: #f3f3f3;
+}
+.card {
+  background-color: white;
+  width: 300px;
+  padding: 1em;
+  margin: auto;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+  /* border: 1px solid black; */
+}
+.id {
+}
+
+.name {
+}
+
+.gender,
+.age,
+.country {
+  width: 70px;
+  border-radius: 3.5px;
+  padding: 2px;
+}
+
+.country {
+}
+
+.desc {
+  text-align: left;
+  width: 90%;
+  border-radius: 8px;
+  height: 200px;
+  padding: 8px;
+  overflow: hidden;
+  width: 97%;
+}
+
+.logo {
+  border-radius: 30px;
+  background-color: #f3f3f3;
+  height: 30px;
+  width: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.always-show-panel {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.metadata-container {
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.metadata-item {
+  text-align: start;
+}
+
+.title {
+  color: gray;
+  padding-bottom: 0.2rem;
+}
+
+.icon-container {
+  text-align: right;
+  display: flex;
+  justify-content: end;
+  gap: 1rem;
+}
+.action-icon {
+  width: 16px;
+  height: 16px;
+}
+
+.editmode {
+  outline: unset;
+  border: 1px solid gray;
+  pointer-events: unset;
+  padding: 3px !important;
+  margin-left: 3px;
+  margin-right: 3px;
+}
+
+.icon {
+  margin-top: 12px;
+  cursor: pointer;
+}
+
+.toogle {
+  cursor: pointer;
+}
+
+input,
+textarea {
+  outline: none;
+  border: none;
+  pointer-events: none;
+  padding: 0px !important;
+  margin: 0px !important;
+}
